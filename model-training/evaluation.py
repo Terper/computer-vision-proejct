@@ -9,7 +9,8 @@ model = YOLO(
 
 
 def main():
-    model.val(split="train")
+    metrics = model.val(split="test")
+    print(metrics.box.maps)
 
 
 if __name__ == "__main__":
