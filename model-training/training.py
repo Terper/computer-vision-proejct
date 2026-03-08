@@ -20,12 +20,6 @@ def main():
         augment=True,
     )
 
-    print("--- Evaluation of test set ---")
-    metrics = model.val(split="test")
-
-    print(f"Test mAP50: {metrics.results_dict['metrics/mAP50(B)']}")
-    print(f"Test mAP50-95: {metrics.results_dict['metrics/mAP50-95(B)']}")
-
 
 if __name__ == "__main__":
     main()
