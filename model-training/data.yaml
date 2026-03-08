@@ -1,4 +1,4 @@
-path: /Users/jann/Dev/Arcada/datorseende/project/datasets/split-dataset
+path: /Users/jann/Dev/Arcada/datorseende/project/datasets/original-split
 train: train
 val: val
 test: test
