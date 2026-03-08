@@ -1,0 +1,9 @@
+path: /Users/jann/Dev/Arcada/datorseende/project/datasets/split-dataset
+train: train
+val: val
+test: test
+
+names:
+  0: Dryckeskartong
+  1: Konservburk
+  2: Pantburk
