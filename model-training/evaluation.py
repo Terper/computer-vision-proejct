@@ -10,8 +10,14 @@ model_path = (
 
 def main():
     model = YOLO(model_path)
-    metrics = model.val(split="test")
-    print(metrics.box.maps)
+    model.to("cuda")
+    model.val(
+        split="test",
+        save=True,
+        plots=True,
+        project="WasteDetection",
+        name="test_results",
+    )
 
 
 if __name__ == "__main__":
