@@ -174,6 +174,7 @@ def process_frame(frame, results):
     annotated_frame = frame.copy()
     detections = extract_detections(results)
 
+    # dynamic threshold based on resolution
     diagonal = math.sqrt(frame.shape[0] ** 2 + frame.shape[1] ** 2)
     cluster_threshold = diagonal * 0.3
 
@@ -187,6 +188,7 @@ def process_frame(frame, results):
         added_to_cluster = False
 
         for cluster in clusters:
+            # if any detection in a cluster is close enough add it to the cluster
             if any(
                 detection.get_distance_to(d) < cluster_threshold
                 for d in cluster.detections
@@ -216,7 +218,7 @@ def process_video(model, input_path, output_path):
 
     print(f"Video: {width}x{height} @ {fps} FPS")
 
-    fourcc = cv2.VideoWriter_fourcc(*"avc1")
+    fourcc = cv2.VideoWriter_fourcc(*"avc1")  # avc1 to open in vs code
     out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
 
     frame_count = 0
