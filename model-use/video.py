@@ -27,12 +27,12 @@ PLURAL_LABELS = {
 
 
 BASE_DIR = Path(__file__).parent
-input_path = str(BASE_DIR / "input.mp4")
+input_path = str(BASE_DIR / "inputdd.mp4")
 output_path = str(BASE_DIR / "output.mp4")
 
 model_path = str(
     BASE_DIR.parent
-    / "model-training/runs/detect/WasteDetection/yolo26_waste_run_2/weights/best.pt"
+    / "model-training/runs/detect/WasteDetection/yolo26_waste_run_3/weights/best.pt"
 )
 model = YOLO(model_path)
 model.to("cuda")

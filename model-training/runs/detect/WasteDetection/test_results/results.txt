@@ -1,5 +1,0 @@
-                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 5/5 1.6it/s 3.2s
-                   all         67        165      0.915      0.908       0.95      0.856
-        Dryckeskartong         37         47      0.836      0.872      0.899      0.831
-           Konservburk         41         54      0.972      0.926      0.983       0.85
-              Pantburk         41         64      0.937      0.925      0.968      0.888

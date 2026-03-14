@@ -15,14 +15,18 @@ def main():
         # device="mps",  # using apple silicon
         device="cuda",  # using gpu
         project="WasteDetection",
-        name="yolo26_waste_run_2",
+        name="yolo26_waste_run_1",
         save=True,
         plots=True,
-        augment=True,
         patience=50,
-        lr0=0.01,
         cos_lr=True,
         mixup=0.1,
+        flipud=0.1,
+        copy_paste=0.1,
+        degrees=10,
+        shear=5,
+        dropout=0.1,
+        label_smoothing=0.1,
     )
 
 

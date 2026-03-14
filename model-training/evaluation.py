@@ -4,7 +4,7 @@ from ultralytics import YOLO
 SCRIPT_DIR = Path(__file__).parent
 
 model_path = (
-    SCRIPT_DIR / "runs/detect/WasteDetection/yolo26_waste_run_2/weights/best.pt"
+    SCRIPT_DIR / "runs/detect/WasteDetection/yolo26_waste_run_3/weights/best.pt"
 )
 
 

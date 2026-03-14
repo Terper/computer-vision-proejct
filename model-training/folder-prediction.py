@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 model_path = str(
     BASE_DIR
-    / "model-training/runs/detect/WasteDetection/yolo26_waste_run_2/weights/best.pt"
+    / "model-training/runs/detect/WasteDetection/yolo26_waste_run_3/weights/best.pt"
 )
 model = YOLO(model_path)
 model.to("cuda")
