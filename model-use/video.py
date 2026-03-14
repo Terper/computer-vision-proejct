@@ -15,6 +15,7 @@ GREEN = (0, 255, 0)
 RED = (0, 0, 255)
 YELLOW = (0, 255, 255)
 BLUE = (255, 0, 0)
+CLUSTER_THRESHOLD = 0.2
 
 DEBUG = False
 
@@ -26,7 +27,7 @@ PLURAL_LABELS = {
 
 
 BASE_DIR = Path(__file__).parent
-input_path = str(BASE_DIR / "input.mov")
+input_path = str(BASE_DIR / "input.mp4")
 output_path = str(BASE_DIR / "output.mp4")
 
 model_path = str(
@@ -176,7 +177,7 @@ def process_frame(frame, results):
 
     # dynamic threshold based on resolution
     diagonal = math.sqrt(frame.shape[0] ** 2 + frame.shape[1] ** 2)
-    cluster_threshold = diagonal * 0.3
+    cluster_threshold = diagonal * CLUSTER_THRESHOLD
 
     clusters = []
 
@@ -232,8 +233,6 @@ def process_video(model, input_path, output_path):
             verbose=False,
             persist=True,
             tracker="bytetrack.yaml",
-            conf=0.5,
-            iou=0.5,
         )
         annotated_frame = process_frame(frame, results)
         out.write(annotated_frame)
