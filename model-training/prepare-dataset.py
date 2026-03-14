@@ -2,17 +2,22 @@ import shutil
 import splitfolders
 import os
 import random
+from pathlib import Path
 
-dataset_dir = "/Users/jann/Dev/Arcada/datorseende/project/datasets/original"
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-split_dir_name = dataset_dir.split("/")[-1] + "-split"
+
+dataset_name = "TrashDataset"
+dataset_dir = BASE_DIR / "datasets" / dataset_name
+
+split_dir_name = dataset_dir.name + "-split"
 split_dir = os.path.join(os.path.dirname(dataset_dir), split_dir_name)
 
 if os.path.exists(split_dir):
     print(f"Split directory '{split_dir}' already exists.")
     exit(1)
 
-cleaned_dir_name = dataset_dir.split("/")[-1] + "-cleaned"
+cleaned_dir_name = dataset_dir.name + "-cleaned"
 cleaned_dir = os.path.join(os.path.dirname(dataset_dir), cleaned_dir_name)
 image_dir = os.path.join(cleaned_dir, "images")
 label_dir = os.path.join(cleaned_dir, "labels")
