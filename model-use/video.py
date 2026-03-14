@@ -1,6 +1,7 @@
 import math
 import numpy as np
 from itertools import combinations
+from pathlib import Path
 import cv2
 from ultralytics import YOLO
 
@@ -26,14 +27,16 @@ PLURAL_LABELS = {
 }
 
 
-input_path = "/Users/jann/Dev/Arcada/datorseende/project/model-use/input.mov"
-output_path = "/Users/jann/Dev/Arcada/datorseende/project/model-use/output.mp4"
+BASE_DIR = Path(__file__).parent
+input_path = str(BASE_DIR / "input.mov")
+output_path = str(BASE_DIR / "output.mp4")
 
-model_path = (
-    "/Users/jann/Dev/Arcada/datorseende/project/model-training/runs/detect/"
-    "WasteDetection/yolo26_waste_run_1/weights/best.pt"
+model_path = str(
+    BASE_DIR.parent
+    / "model-training/runs/detect/WasteDetection/yolo26_waste_run_2/weights/best.pt"
 )
 model = YOLO(model_path)
+model.to("cuda")
 
 
 def get_centroid(box):

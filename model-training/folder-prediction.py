@@ -2,9 +2,14 @@ from pathlib import Path
 from PIL import Image
 from ultralytics import YOLO
 
-model = YOLO(
-    "/Users/jann/Dev/Arcada/datorseende/project/model-training/runs/detect/WasteDetection/yolo26_waste_run_1/weights/best.pt"
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+model_path = str(
+    BASE_DIR
+    / "model-training/runs/detect/WasteDetection/yolo26_waste_run_2/weights/best.pt"
 )
+model = YOLO(model_path)
+model.to("cuda")
 
 
 def load_images_from_folder(folder_path):
@@ -22,7 +27,7 @@ def load_images_from_folder(folder_path):
 
 
 if __name__ == "__main__":
-    folder_path = "/Users/jann/Dev/Arcada/datorseende/project/datasets/torture-test"
+    folder_path = str(BASE_DIR / "datasets/Torture")
     images, paths = load_images_from_folder(folder_path)
 
     for img, path in zip(images, paths):

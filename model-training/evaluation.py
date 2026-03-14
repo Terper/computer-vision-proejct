@@ -3,12 +3,13 @@ from ultralytics import YOLO
 
 SCRIPT_DIR = Path(__file__).parent
 
-model = YOLO(
-    "/Users/jann/Dev/Arcada/datorseende/project/model-training/runs/detect/WasteDetection/yolo26_waste_run_1/weights/best.pt"
+model_path = (
+    SCRIPT_DIR / "runs/detect/WasteDetection/yolo26_waste_run_2/weights/best.pt"
 )
 
 
 def main():
+    model = YOLO(model_path)
     metrics = model.val(split="test")
     print(metrics.box.maps)
 

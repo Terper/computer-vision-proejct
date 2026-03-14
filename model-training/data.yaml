@@ -1,4 +1,4 @@
-path: /Users/jann/Dev/Arcada/datorseende/project/datasets/original-split
+path: C:\Users\jann\Documents\computer-vision-proejct\datasets\TrashDataset-split
 train: train
 val: val
 test: test

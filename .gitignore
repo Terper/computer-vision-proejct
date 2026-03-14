@@ -1,6 +1,7 @@
 .DS_Store
 datasets
 yolo26n.pt
+yolo26s.pt
 
 # Python-generated files
 __pycache__/
