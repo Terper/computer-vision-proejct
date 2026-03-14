@@ -16,9 +16,7 @@ RED = (0, 0, 255)
 YELLOW = (0, 255, 255)
 BLUE = (255, 0, 0)
 
-BUFFER_SIZE = 10
-
-DEBUG = True
+DEBUG = False
 
 PLURAL_LABELS = {
     "Dryckeskartong": "Dryckeskartonger",
